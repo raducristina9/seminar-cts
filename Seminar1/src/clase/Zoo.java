@@ -20,7 +20,7 @@ public class Zoo  {
 	
 	public void addAnimal(Animal a) {
 		lista.add(a);
-		System.out.println("Animal adaugat");		
+		
 	}
 	
 	public void feedAllAnimals() {
