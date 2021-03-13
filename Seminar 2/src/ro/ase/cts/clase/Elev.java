@@ -10,8 +10,8 @@ public class Elev extends Aplicant{
 	public int getClasa() {
 		return clasa;
 	}
-	public void setClasa(int i) {
-		this.clasa = i;
+	public void setClasa(int clasa) {
+		this.clasa = clasa;
 	}
 	public String getTutore() {
 		return tutore;
@@ -23,11 +23,14 @@ public class Elev extends Aplicant{
 	
 	@Override
 	public String toString() {
-		return "Elev: Nume=" + nume + ", Prenume=" + prenume + ", Varsta="
-				+ varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nr_proiecte  + ", DenumireProiect="
-				+ Arrays.toString(denumireProiect) + "Clasa=" + clasa + ", Tutore=" + tutore;
+		final StringBuilder stringb=new StringBuilder("Elev:");
+		stringb.append(super.toString());
+		stringb.append(", clasa=");
+		stringb.append(clasa);
+		stringb.append(", tutore=");
+		stringb.append(tutore);
+		return stringb.toString();
 	}
-	
 	public Elev() {
 		super();
 	}
