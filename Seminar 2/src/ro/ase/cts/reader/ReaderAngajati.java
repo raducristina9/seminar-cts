@@ -9,9 +9,14 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 
-public class ReaderAngajati implements ReaderAplicant{
-	public  List<Aplicant> readAplicant(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+public class ReaderAngajati extends ReaderAplicant{
+	public ReaderAngajati(String numeFisier) {
+		super(numeFisier);
+		// TODO Auto-generated constructor stub
+	}
+
+	public  List<Aplicant> readAplicanti() throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.numeFisier));
 		input2.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 

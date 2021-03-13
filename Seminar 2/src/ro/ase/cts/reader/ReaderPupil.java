@@ -9,12 +9,17 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Elev;
 
-public class ReaderPupil implements ReaderAplicant{
+public class ReaderPupil extends ReaderAplicant{
 
 
 
-	public  List<Aplicant> readAplicant(String file) throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+	public ReaderPupil(String numeFisier) {
+		super(numeFisier);
+		// TODO Auto-generated constructor stub
+	}
+
+	public  List<Aplicant> readAplicanti() throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.numeFisier));
 		input2.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 

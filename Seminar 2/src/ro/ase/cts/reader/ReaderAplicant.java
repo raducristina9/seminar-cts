@@ -9,8 +9,17 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Elev;
 
-public interface ReaderAplicant {
+public abstract class ReaderAplicant {
+	protected String numeFisier;
 	
-	public List<Aplicant> readAplicant(String file)  throws FileNotFoundException;
+	public abstract List<Aplicant> readAplicanti()  throws FileNotFoundException;
+	
+	public ReaderAplicant(String numeFisier) {
+		super();
+		this.numeFisier = numeFisier;
+	}
+	
+	
+	
 
 }
