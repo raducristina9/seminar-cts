@@ -25,6 +25,7 @@ public class Student extends Aplicant {
 	public int getFinantare() {
 		return Constante.FINANTARE_STUDENT;
 	}
+	
 	public Student() {
 		super();
 		
