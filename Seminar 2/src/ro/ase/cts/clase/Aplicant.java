@@ -2,6 +2,8 @@ package ro.ase.cts.clase;
 
 import java.util.Arrays;
 
+import ro.ase.cts.util.Constante;
+
 public abstract class Aplicant{
 	protected String nume;
 	protected String prenume;
@@ -30,11 +32,20 @@ public abstract class Aplicant{
 		this.varsta = varsta;
 	}
 	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
-		}
+		StringBuilder builder = new StringBuilder();
+		builder.append("Aplicant [nume=");
+		builder.append(nume);
+		builder.append(", prenume=");
+		builder.append(prenume);
+		final String statut = punctaj > Constante.STATUT 
+				  ? "a fost acceptat." 
+				  : "nu a fost acceptat.";
+		builder.append(", statut=");
+		builder.append(statut);
+		
+		System.out.println(builder.toString());
+	}
+		
 	public int getPunctaj() {
 		return punctaj;
 	}
@@ -85,6 +96,19 @@ public abstract class Aplicant{
 		builder.append(Arrays.toString(denumireProiect));
 		builder.append("]");
 		return builder.toString();
+	}
+	
+	public String finantare() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Aplicant ");
+		builder.append(nume);
+		builder.append(" ");
+		builder.append(prenume);
+		builder.append(" primeste ");
+		return builder.toString();
+			
+		
+		
 	}
 	
 

@@ -10,27 +10,27 @@ import ro.ase.cts.clase.Angajat;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Student;
 
-public class ReaderStudent extends ReaderAplicant{
-	public ReaderStudent(String numeFisier) {
+public class ReaderStudenti extends ReaderAplicanti{
+	public ReaderStudenti(String numeFisier) {
 		super(numeFisier);
 		// TODO Auto-generated constructor stub
 	}
 
 	public  List<Aplicant> readAplicanti() throws FileNotFoundException, NumberFormatException {
-		Scanner input = new Scanner(new File(super.numeFisier));
-		input.useDelimiter(",|\n");
+		Scanner scanner = new Scanner(new File(super.numeFisier));
+		scanner.useDelimiter(",|\n");
 		List<Aplicant> studenti = new ArrayList<Aplicant>();
 
-		while (input.hasNext()) {
+		while (scanner.hasNext()) {
 			Student student=new Student();
-			readAplicant(input, student);
-			int an_studii = input.nextInt();
-			String facultate = (input.next()).toString();
+			readAplicanti(scanner, student);
+			int an_studii = scanner.nextInt();
+			String facultate = (scanner.next()).toString();
 			student.setAn_studii(an_studii);
 			student.setFacultate(facultate);
 			studenti.add(student);
 		}
-		input.close();
+		scanner.close();
 		return studenti;
 	}
 }

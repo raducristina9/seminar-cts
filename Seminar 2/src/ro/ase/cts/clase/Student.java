@@ -2,6 +2,8 @@ package ro.ase.cts.clase;
 
 import java.util.Arrays;
 
+import ro.ase.cts.util.Constante;
+
 public class Student extends Aplicant {
 	protected String facultate;
 	protected int an_studii;
@@ -20,7 +22,9 @@ public class Student extends Aplicant {
 		this.an_studii = an_studii;
 	}
 
-
+	public int getFinantare() {
+		return Constante.FINANTARE_STUDENT;
+	}
 	public Student() {
 		super();
 		
@@ -43,10 +47,12 @@ public class Student extends Aplicant {
 		return stringb.toString();
 	}
 	
-	public int finantare() {
-		int s=20;
-		System.out.println("Studentul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
+	public String finantare() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.valueOf(super.finantare()));
+		builder.append(Constante.FINANTARE_ELEV);
+		builder.append(" Euro/zi in proiect.");	
+		return builder.toString();
 	}
 	
 }

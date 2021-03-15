@@ -2,6 +2,8 @@ package ro.ase.cts.clase;
 
 import java.util.Arrays;
 
+import ro.ase.cts.util.Constante;
+
 public class Angajat extends Aplicant{
 	private String ocupatie;
 	private int salariu;
@@ -17,6 +19,9 @@ public class Angajat extends Aplicant{
 	}
 	public void setSalariu(int salariu) {
 		this.salariu = salariu;
+	}
+	public int getFinantare() {
+		return Constante.FINANTARE_ANGAJAT;
 	}
 	public Angajat(String nume, String prenume, int varsta, int punctaj, int nr_proiecte, String[] denumire_Proiecte,int salariu,String ocupatie) {
 		super(nume,prenume,varsta,punctaj,nr_proiecte,denumire_Proiecte);
@@ -41,11 +46,12 @@ public class Angajat extends Aplicant{
 	}
 	
 	
-	public int finantare() {
-		int s=10;
-		// TODO Auto-generated method stub
-		System.out.println("Angajatul "+getNume()+" "+getPrenume()+" primeste"+s+" Euro/zi in proiect.");
-		return s;
+	public String finantare() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.valueOf(super.finantare()));
+		builder.append(Constante.FINANTARE_ANGAJAT);
+		builder.append(" Euro/zi in proiect.");	
+		return builder.toString();
 	}
 	
 }
