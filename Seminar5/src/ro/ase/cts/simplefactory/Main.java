@@ -14,5 +14,5 @@ public class Main {
 		Jucator portar2=factorySingleton.getJucator(TipJucator.PORTAR, "Portar2", 40);
 		System.out.println(portar2.toString());
 	}
-
+	
 }
