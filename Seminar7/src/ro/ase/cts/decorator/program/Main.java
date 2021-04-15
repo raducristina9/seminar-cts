@@ -22,7 +22,7 @@ public class Main {
 		DecoratorAbstract decoratorAbstract2=new DecoratorContactlessTelefon(card);
 		decoratorAbstract2.platesteContactless();
 		
-		DecoratorAbstract decoratorAbstract3=new DecoratorContactless(decoratorAbstract2);
+		//DecoratorAbstract decoratorAbstract3=new DecoratorContactless(decoratorAbstract2);
 	
 	}
 
