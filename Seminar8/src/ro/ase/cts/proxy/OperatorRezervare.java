@@ -15,7 +15,7 @@ public class OperatorRezervare implements IOperatorRezervare{
 
 	@Override
 	public void rezerva(int nrPersoane) {
-		System.out.println("S-a realizat rezervarea pentru un numar de " + nrPersoane +" persoane la localul "+ numeLocal);
+		System.out.println("S-a realizat rezervarea pentru un numar de " + nrPersoane +" la localul "+ numeLocal);
 		
 	}
 	
