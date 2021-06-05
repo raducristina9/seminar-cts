@@ -3,8 +3,11 @@ package ro.ase.cts.teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import ro.ase.cts.clase.Grupa;
+import suite.categorii.TestePromovabilitateCategory;
+import suite.categorii.TesteUrgenteCategory;
 
 public class TesteConstructorGrupa {
 
@@ -15,12 +18,14 @@ public class TesteConstructorGrupa {
 	}
 	
 	@Test
+	@Category(TesteUrgenteCategory.class)
 	public void testBounderyLimitaInferioara() {
 		Grupa grupa=new Grupa (1000);
 		assertEquals(1000, grupa.getNrGrupa());
 	}
 	
 	@Test
+	@Category(TesteUrgenteCategory.class)
 	public void testBounderyLimitaSuperioara() {
 		Grupa grupa=new Grupa (1100);
 		assertEquals(1100, grupa.getNrGrupa());
@@ -38,6 +43,7 @@ public class TesteConstructorGrupa {
 	}
 	
 	@Test(timeout = 500)
+	@Category(TesteUrgenteCategory.class)
 	public void testPerformanta() {
 		Grupa grupa=new Grupa (1085);
 	}

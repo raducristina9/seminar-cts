@@ -4,12 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import mockuri.StudentDummy;
 import ro.ase.cts.clase.Grupa;
 import ro.ase.cts.clase.IStudent;
 import ro.ase.cts.clase.Student;
+import suite.categorii.TestePromovabilitateCategory;
 
+@Category(TestePromovabilitateCategory.class)
 public class TestPromovabilitateGrupa {
 	
 	private Grupa grupa;
@@ -26,6 +29,7 @@ public class TestPromovabilitateGrupa {
 	}
 
 	@Test
+	@Category(TestePromovabilitateCategory.class)
 	public void testRight() {
 	Grupa grupa=new Grupa(1085);
 	//restantieri
@@ -47,6 +51,7 @@ public class TestPromovabilitateGrupa {
 	}
 	
 	 @Test
+	 @Category(TestePromovabilitateCategory.class)
 	    public void testGetPromovabilitateLimitaInferioara(){
 	        Grupa grupa= new Grupa(1085);
 	        for( int i=0;i<5;i++){
@@ -60,6 +65,7 @@ public class TestPromovabilitateGrupa {
 	    }
 
 	    @Test
+	    @Category(TestePromovabilitateCategory.class)
 	    public void testGetPromovabilitateLimitaSuperioara(){
 	        Grupa grupa= new Grupa(1085);
 	        for( int i=0;i<5;i++){
@@ -73,6 +79,7 @@ public class TestPromovabilitateGrupa {
 	    }
 	    
 	    @Test (expected = IndexOutOfBoundsException.class)
+	    @Category(TestePromovabilitateCategory.class)
 	    public void testErrorConditions(){
 	        Grupa grupa=new Grupa(1085);
 
@@ -81,6 +88,7 @@ public class TestPromovabilitateGrupa {
 
 	    
 	    @Test(timeout = 500)
+	    @Category(TestePromovabilitateCategory.class)
 	    public void testPerformanceTimp(){
 		   grupa.getPromovabilitate();
 

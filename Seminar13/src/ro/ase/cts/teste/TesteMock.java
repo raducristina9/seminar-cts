@@ -3,11 +3,14 @@ package ro.ase.cts.teste;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import mockuri.StudentDummy;
 import mockuri.StudentFake;
 import mockuri.StudentStub;
 import ro.ase.cts.clase.Grupa;
+import suite.categorii.TestePromovabilitateCategory;
+import suite.categorii.TesteUrgenteCategory;
 
 public class TesteMock {
 
@@ -22,6 +25,7 @@ public class TesteMock {
 	    }
 	  
 	  	@Test
+	  	@Category({TestePromovabilitateCategory.class ,TesteUrgenteCategory.class})
 	    public void testReferenceGetPromovabilitate() {
 	    	 Grupa grupa=new Grupa(1085);
 	    	 
